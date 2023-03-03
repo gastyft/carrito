@@ -1,12 +1,19 @@
 
 .nav-bar{
     color:white;
+    
 }
 .navbar-brand{
-    color:red;
+    color:red; 
 }
 .nav-item{
 padding: 0.5em;
 }
 
 
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+}

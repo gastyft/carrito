@@ -1,6 +1,7 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" routerLink="/principal">ProyectoCarrito.com</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,29 +11,30 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" routerLink="/principal">Link</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              Categorías
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">celulares</a></li>
-              <li><a class="dropdown-item" href="#">notebooks</a></li>
+              <li><a class="dropdown-item" routerLink="/cards">celulares</a></li>
+              <li><a class="dropdown-item"routerLink="/principal">notebooks</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">ver todo</a></li>
+              <li><a class="dropdown-item" routerLink="/principal">ver todo</a></li>
             </ul>
           </li>
          
         </ul>
         <ol class="d-flex">
-        <a class="nav-item">login</a>
+        <a class="nav-item" routerLink="/login">Login</a>
         
-            <a class="nav-item">
-        iconCarrito
+            <a class="nav-item" href="#">
+              <i class="fa-solid fa-cart-shopping">()</i>
           
         </a>
     </ol>
       </div>
     </div>
   </nav>
+
