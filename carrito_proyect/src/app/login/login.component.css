@@ -1,0 +1,117 @@
+.container{
+    background-color: blanchedalmond;
+}
+.nav-bar{
+    color:white;
+    
+}
+.navbar-brand{
+    color:red; 
+}
+.nav-item{
+padding: 0.5em;
+}
+
+
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+    position: flex;
+    width: 100%;
+    z-index: 3;
+    
+     
+}
+.container-fluid{
+
+    background-color: rgb(184, 173, 173);
+    margin-top: 0px;
+}
+
+
+.nav{
+    margin-top: 0px;
+}
+
+.loginn{
+
+    margin-top: 50px;
+    background-color: antiquewhite;
+}
+
+  
+
+  @media only screen and (max-width:400px) /* Para pantalla al 500% en crhome */
+  {
+
+  }
+
+  
+  @media only screen and (max-width:1920px) /* Para pantalla al 90% en crhome */
+  
+  {
+
+
+  }
+  
+  
+    
+  @media only screen and (max-width: 1366px)       /* Para pantalla al 100% crhome*/
+  {
+  
+  
+    
+     }
+  
+  
+  
+  
+  
+  
+  
+     @media only screen and (max-width:992px) /* Para pantalla al 150% crhome */
+  
+  {
+  
+  
+   
+   
+  
+    }
+    @media only screen and (max-width:768px) /* Para pantalla al 200% en crhome */
+  
+    {
+   
+        }
+  
+        @media only screen and (max-width:600px) /* Para pantalla al 250% en crhome */
+  
+    {
+    
+    
+    
+        }
+  
+  
+        @media only screen and (max-width:412px) /* Para pantalla al 300% en crhome */
+  
+        {
+        
+       
+          
+            }
+  
+            
+        @media only screen and (max-width:368x) /* Para pantalla al 500% en crhome */
+  
+        {
+        
+               
+        }
+         
+            @media only screen and (max-width:280px) /* Para pantalla al 500% en crhome */
+
+            {
+            
+          
+            
+            
+                   }
