@@ -21,6 +21,7 @@ export class PrincipalComponent implements OnInit {
   
       localStorage.setItem('isWelcomeShown', 'true');
     }
+    
   }
   
 
