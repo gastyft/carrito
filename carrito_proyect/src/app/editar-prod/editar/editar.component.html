@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="all">
+    
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="form-group" >
+        <label for="comment"><h2> Editar DISPO:</h2> </label>
+        <input  type="text"    class="form-control" id="experiencia_laboral" name="nombre" [(ngModel)]="dispositivos.nombre" required >  
+    
+      </div>
+      <div class="form-group" >
+        <label for="comment"><h2> Editar Descripcion:</h2> </label>
+        <input  type="text"  class="form-control" id="experiencia_laboral" name="descrip" [(ngModel)]="dispositivos.descrip" required >  
+    
+      </div>
+      <div class="form-group" >
+        <label for="comment"><h2> Editar Precio:</h2> </label>
+        <input  type="text"    class="form-control" id="experiencia_laboral" name="precio" [(ngModel)]="dispositivos.precio" required >  
+    
+      </div>
+      <div class="form-group" >
+        <label for="comment"><h2> Editar url:</h2> </label>
+        <input  type="text" class="form-control" id="experiencia_laboral" name="url" [(ngModel)]="dispositivos.url" required >  
+    
+      </div>
+      <a routerLink="/principal" > 
+        <input class="btn btn-danger" type="button" value="Volver">
+        </a>
+     
+        <input class="btn btn-primary" type="submit" value="Guardar Cambios" [disabled]="!dispositivos.nombre && !dispositivos.descrip && !dispositivos.precio && !dispositivos.url">
+    
+      </form>
+      </div>
+    
+    </div>

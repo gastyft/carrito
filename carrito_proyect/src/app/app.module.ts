@@ -16,7 +16,10 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
-
+import {CloudinaryModule} from '@cloudinary/ng';
+import { FooterComponent } from './footer/footer.component';
+import { AgregarComponent } from './agregar-prod/agregar/agregar.component';
+import { EditarComponent } from './editar-prod/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { InterceptorService } from './services/interceptor.service';
     ContactoComponent,
     CardsNotebookComponent,
     Error404Component,
-    LoginComponent
+    LoginComponent,
+    FooterComponent,
+    AgregarComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +42,7 @@ import { InterceptorService } from './services/interceptor.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CloudinaryModule,
   ],
   providers: [ 
     InterceptorService, 
