@@ -30,18 +30,10 @@ export class CardsComponent implements OnInit {
   }
   cargarDatos(){
     this.datosDispo.getDispoList().subscribe( data =>{
-      if(data){
       console.log(data)
       this.dispos = data;
-      }
-      else{
-        swal("Bienvenido a mi portfolio", "Soy Desarrollador Full-Stack Jr y Tester Manual Trainee en busca de mi primer trabajo IT con ganas de trabajar y seguir aprendiendo en el mundo de la programación", "")
-        .then(() => {
-          swal("Problemas con el servidor", "Página en mantenimiento. No se cargarán mis datos. Disculpen las molestias", "error");
-      });
-    } });
-      }
-    
+      
+    }) } 
 
     
 deleteDispo(id?: number){
