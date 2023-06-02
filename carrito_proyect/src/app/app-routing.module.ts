@@ -7,6 +7,9 @@ import { CardsComponent } from './cards/cards.component';
 import { CardsNotebookComponent } from './cards-notebook/cards-notebook.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
+import { AgregarComponent } from './agregar-prod/agregar/agregar.component';
+import { EditarComponent } from './editar-prod/editar/editar.component';
+
 const routes: Routes = [
 
   {path: '', 
@@ -21,6 +24,10 @@ component: CardsComponent},
 component: CardsNotebookComponent},  
 {path: 'contacto',
 component: ContactoComponent},
+{path:'agregar',
+component: AgregarComponent},
+{path:'editar/:id',
+component: EditarComponent},
 {path: 'footer',
 component: FooterComponent},
 

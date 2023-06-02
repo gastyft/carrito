@@ -18,6 +18,8 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
 import {CloudinaryModule} from '@cloudinary/ng';
 import { FooterComponent } from './footer/footer.component';
+import { AgregarComponent } from './agregar-prod/agregar/agregar.component';
+import { EditarComponent } from './editar-prod/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FooterComponent } from './footer/footer.component';
     CardsNotebookComponent,
     Error404Component,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    AgregarComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
