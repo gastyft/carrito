@@ -1,5 +1,5 @@
 
-.container {  display: grid;
+.container-fluid {  display: grid;
     background-color: transparent;
     grid-template-columns: 1.5fr 1.5fr;
     grid-template-rows: 0.8fr;
@@ -8,6 +8,12 @@
     grid-auto-flow: row;
     grid-template-areas:
       "cards cards";
+      background: rgb(59,59,59);
+      background: -moz-linear-gradient(0deg, rgba(59,59,59,1) 10%, rgba(219,115,224,1) 42%, rgba(99,213,215,1) 81%);
+      background: -webkit-linear-gradient(0deg, rgba(59,59,59,1) 10%, rgba(219,115,224,1) 42%, rgba(99,213,215,1) 81%);
+      background: linear-gradient(0deg, rgba(59,59,59,1) 10%, rgba(219,115,224,1) 42%, rgba(99,213,215,1) 81%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3b3b3b",endColorstr="#63d5d7",GradientType=1);
+      padding-bottom: 130px;
   }
   
   .cards { grid-area: cards; 

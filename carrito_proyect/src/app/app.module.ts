@@ -16,7 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
-
+import {CloudinaryModule} from '@cloudinary/ng';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { InterceptorService } from './services/interceptor.service';
     ContactoComponent,
     CardsNotebookComponent,
     Error404Component,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { InterceptorService } from './services/interceptor.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CloudinaryModule,
   ],
   providers: [ 
     InterceptorService, 

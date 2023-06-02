@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { CardsComponent } from './cards/cards.component';
 import { CardsNotebookComponent } from './cards-notebook/cards-notebook.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { FooterComponent } from './footer/footer.component';
 const routes: Routes = [
 
   {path: '', 
@@ -20,7 +21,8 @@ component: CardsComponent},
 component: CardsNotebookComponent},  
 {path: 'contacto',
 component: ContactoComponent},
-
+{path: 'footer',
+component: FooterComponent},
 
 
 
