@@ -3,7 +3,11 @@ import { Router } from '@angular/router';
 import { dispo } from 'src/app/model/dispo'; 
 import { DispoServiceService } from 'src/app/services/dispo.service.service';
 
-import swal from 'sweetalert';
+import * as swal from 'sweetalert';
+
+
+
+
 
 @Component({
   selector: 'app-agregar',
@@ -30,17 +34,19 @@ export class AgregarComponent implements OnInit {
 
 
   AgregarDispo ():void{
+    if( this.nombre !=null && this.descrip !=null && this.precio !=null && this.url!=null){
     const disp = new dispo(this.nombre,this.descrip,this.precio,this.url);
     this.datosHard.save(disp).subscribe( (data: any)=> {
      console.log(data);
     }
     )
-    if( this.nombre !=null && this.descrip !=null && this.precio !=null && this.url!=null){
+  {
 
       swal("Producto agregado"); 
           
       this.roouter.navigate(['principal']);
     }
+  }
     else{
       swal("fallo al guardar producto");
       this.roouter.navigate(['principal'])

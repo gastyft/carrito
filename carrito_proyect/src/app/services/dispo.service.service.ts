@@ -25,6 +25,6 @@ public getDispoId(id: number):Observable<dispo>{
   return this.http.get<dispo>(this.url + `traer/${id}`);
  }
  save(Dispo: dispo): Observable<any>{
-  return this.http.post<any>(this.url + 'crear', dispo);
+  return this.http.post<any>(this.url + 'crear', Dispo);
  }
 }

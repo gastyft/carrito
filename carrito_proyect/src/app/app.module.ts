@@ -20,6 +20,8 @@ import {CloudinaryModule} from '@cloudinary/ng';
 import { FooterComponent } from './footer/footer.component';
 import { AgregarComponent } from './agregar-prod/agregar/agregar.component';
 import { EditarComponent } from './editar-prod/editar/editar.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { EditarComponent } from './editar-prod/editar/editar.component';
     LoginComponent,
     FooterComponent,
     AgregarComponent,
-    EditarComponent
+    EditarComponent,
+    CarritoComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

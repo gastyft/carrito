@@ -1,27 +1,27 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand"  routerLink="/principal">ProyectoCarrito.com</a>
+      <a class="navbar-brand"  routerLink="/principal" (click)="scrollToTop()">ProyectoCarrito.com</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div data-anijs="if: click do: flipInY animated" class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" routerLink="/principal" (click)="scrollToTop()">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://portfolio-yo-programo.web.app/principal">Portfolio Gastón Ftacla</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              Categorías
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               
-              <li><a class="dropdown-item" routerLink="/cards">celulares</a></li>
-              <li><a class="dropdown-item"routerLink="/notebookcard">notebooks</a></li>
-              <li><a class="dropdown-item"routerLink="/agregar">Agregar Producto</a></li>
+              <li><a class="dropdown-item" routerLink="/cards">Ver Productos</a></li>
+            <!--  <li><a class="dropdown-item"routerLink="/notebookcard">notebooks</a></li>  -->
+              <li><a class="dropdown-item"routerLink="/agregar" *ngIf="isLogged" >Agregar Producto</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" routerLink="/principal">ver todo</a></li>
             </ul>
@@ -29,10 +29,12 @@
          
         </ul>
         <ol class="d-flex">
-        <a class="nav-item" routerLink="/login">Login</a>
+          <a class="nav-item" routerLink="/registro" *ngIf="!isLogged" >SignUp</a>
+        <a class="nav-item"  *ngIf="!isLogged"   routerLink="/login">Login</a>
+        <a class="nav-item"  *ngIf="isLogged"  (click)="onLogOut()">Logout</a>
         
-            <a class="nav-item" href="#">
-              <i class="fa-solid fa-cart-shopping">()</i>
+            <a class="nav-item" routerLink="/carrito">
+              <i class="fa-solid fa-cart-shopping">{{cantidad}}</i>
           
         </a>
     </ol>

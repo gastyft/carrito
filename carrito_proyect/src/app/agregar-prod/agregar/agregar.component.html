@@ -1,14 +1,16 @@
-<p>agregar works!</p>
 <div class="container-fluid">
     <div class="all">
     
       <form (ngSubmit)="AgregarDispo()" novalidate #f="ngForm">
     <div class="form-group" >
-        <label for="comment"><h2> Agregar Hard Skills</h2> </label> <br>
-        <label>Nombre de Hard Skill</label>
+        <label for="comment"><h2> Agregar DISPO</h2> </label> <br>
+        <label>Nombre DISPO</label>
         <input  type="text"   class="form-control"  id="nombre" name="nombre" [(ngModel)]="nombre"  required>  
+        <label>DESCRIPCION</label>
         <input type="text" class="form-control" id="descrip" name="descrip"  [(ngModel)]="descrip" required>
-        <input type="number" class="form-control" id="descrip" name="precio"  [(ngModel)]="precio" required>
+        <label>PRECIO</label>
+        <input type="number" class="form-control" id="precio" name="precio"  [(ngModel)]="precio" required>
+        <label>URL</label>
         <input type="text" class="form-control" id="url" name="url"  [(ngModel)]="url" required>
       </div>
      
@@ -16,7 +18,7 @@
         <input class="btn btn-danger" type="button" value="Volver">
         </a>
      
-        <input class="btn btn-primary" type="submit" value="Guardar Cambios"  >
+        <input class="btn btn-primary" type="submit" value="Guardar Cambios"  [disabled]="!nombre && !descrip && !precio && !url" >
     
       </form>
       </div>

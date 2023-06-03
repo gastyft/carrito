@@ -2,8 +2,11 @@
 import { Component, OnInit } from '@angular/core';
 import { dispo } from 'src/app/model/dispo';
 import { DispoServiceService } from 'src/app/services/dispo.service.service';
-import swal from 'sweetalert/typings/core';
+
+import * as swal from 'sweetalert';
+
 import { ActivatedRoute,Router } from '@angular/router';
+
 
 
 @Component({

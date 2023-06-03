@@ -9,6 +9,9 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
 import { AgregarComponent } from './agregar-prod/agregar/agregar.component';
 import { EditarComponent } from './editar-prod/editar/editar.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { RegistroComponent } from './registro/registro.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
 
@@ -16,6 +19,8 @@ const routes: Routes = [
   redirectTo: 'principal', pathMatch:'full'},
   {path: 'principal', 
   component:PrincipalComponent }, 
+  {path:'registro',
+component: RegistroComponent},
   {path: 'login',
   component: LoginComponent},
   {path:'cards',
@@ -25,9 +30,12 @@ component: CardsNotebookComponent},
 {path: 'contacto',
 component: ContactoComponent},
 {path:'agregar',
-component: AgregarComponent},
+component: AgregarComponent , canActivate:[AuthGuard], data:{expectedRol:['admin']} },   
 {path:'editar/:id',
-component: EditarComponent},
+component: EditarComponent, canActivate:[AuthGuard], data:{expectedRol:['admin']} },
+{path:'carrito',
+component: CarritoComponent, canActivate:[AuthGuard], data:{expectedRol:['user']} },
+
 {path: 'footer',
 component: FooterComponent},
 

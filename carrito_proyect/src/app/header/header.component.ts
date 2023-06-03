@@ -1,15 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CarritoService } from '../services/carrito.service';
+import { TokenService } from '../services/token.service'; 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  productosEnCarrito: any[] = [];
+  cantidad: number=0;
+  cantidad1: number=0;
+  isLogged : boolean= false;
+  constructor( private carritoService: CarritoService,public tokenService: TokenService,) {  this.cantidad= carritoService.productosSeleccionados1;}
 
   ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+    
+  }
+  onLogOut(): void {
+    this.tokenService.logOut();
+    window.location.reload();
+   
+  }
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Desplazamiento suave
+    });
+}
+ 
   }
 
-}

@@ -39,18 +39,19 @@
 <div class="loginn">
   <h2>Ingrese el Email y la Contraseña</h2>
 
-  <form #f="ngForm" (ngSubmit)="onLogin()" novalidate >
+  <form #f="ngForm" (ngSubmit)="onLogin()" novalidate  class="was-validated">
     <div class="form-group">
       <label for="nombreUsuario">Nombre de Usuario:</label>
       <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingrese nombre de usuario"  name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
-     
+      <div class="invalid-feedback">Complete con alias o nombre de usuario.</div>
+      <div class="valid-feedback">Valido.</div>
     </div>
 
 
     <div class="form-group">
       <label for="password">Password:</label>
       <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña"  name="password" [(ngModel)]="password"  required minlength="4">
-   
+      <div class="valid-feedback">Valido.</div>
     </div>
     
 <div>
