@@ -16,8 +16,9 @@ export class CardsComponent implements OnInit {
   isLogged : boolean= false;
   data:any;
   dispos:any;
-
+  roles:string[]=[];
   productosEnCarrito: any[] = [];
+  esAdmin: boolean=true;
  
  // dispos: dispo[]= [] ; 
   constructor(
@@ -33,11 +34,13 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {
     this.cargarDatos();
     if (this.tokenService.getToken()) {
+      this.roles = this.tokenService.getAuthorities();
       this.isLogged = true;
+      this.esAdmin = this.roles.includes('ROLE_ADMIN');
     } else {
+      
       this.isLogged = false;
     }
-    
   }
 
   cargarDatos(){

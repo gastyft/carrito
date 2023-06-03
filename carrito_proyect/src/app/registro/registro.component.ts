@@ -12,15 +12,15 @@ import * as swal from 'sweetalert';
 })
 export class RegistroComponent implements OnInit {
 
-  nuevoUsuario: nuevousuario | undefined;
-  nombre:  any;
-  nombreUsuario:  any;
-  email:  any ;
+  nuevousuario: nuevousuario |undefined;
 
-  errMsj: any;
+  nombre!:any;
+  nombreUsuario!:any;
+  email!: any;
+  password!: any;
+  errMsj!: any;
   isLogged = false;
-  password: any ;
-data: any;
+  rol:any='ROLE_USER';
 
   constructor(
     private tokenService: TokenService,
@@ -38,13 +38,13 @@ data: any;
  
   
   onRegister(): void {
-    this.nuevoUsuario = new nuevousuario(this.nombre, this.nombreUsuario, this.email, this.password);
-    this.authService.nuevo( this.nuevoUsuario ).subscribe(
-      data => {
-        if(data){
+    this.nuevousuario = new nuevousuario(this.nombre, this.nombreUsuario, this.email, this.password);
+    this.authService.nuevo( this.nuevousuario ).subscribe(
+      () => {
+        
         swal("", "Cuenta creada", "success");
         this.router.navigate(['/principal']);
-      }},
+      },
       err => {
         this.errMsj = err.error.mensaje;
         swal("", "Error al registrarse " + this.errMsj, "error");
