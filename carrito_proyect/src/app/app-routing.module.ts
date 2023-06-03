@@ -11,6 +11,7 @@ import { AgregarComponent } from './agregar-prod/agregar/agregar.component';
 import { EditarComponent } from './editar-prod/editar/editar.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { RegistroComponent } from './registro/registro.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
 
@@ -29,11 +30,11 @@ component: CardsNotebookComponent},
 {path: 'contacto',
 component: ContactoComponent},
 {path:'agregar',
-component: AgregarComponent},
+component: AgregarComponent , canActivate:[AuthGuard], data:{expectedRol:['admin']} },   
 {path:'editar/:id',
-component: EditarComponent},
+component: EditarComponent, canActivate:[AuthGuard], data:{expectedRol:['admin']} },
 {path:'carrito',
-component: CarritoComponent},
+component: CarritoComponent, canActivate:[AuthGuard], data:{expectedRol:['user']} },
 
 {path: 'footer',
 component: FooterComponent},

@@ -4,6 +4,8 @@ import { DispoServiceService } from '../services/dispo.service.service';
 import { CarritoService } from '../services/carrito.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as swal from 'sweetalert';
+import { TokenService } from '../services/token.service'; 
+
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -11,10 +13,10 @@ import * as swal from 'sweetalert';
 })
 export class CardsComponent implements OnInit {
   @Output() productosSeleccionadosCambiados: EventEmitter<number> = new EventEmitter<number>();
-
+  isLogged : boolean= false;
   data:any;
   dispos:any;
-  id: any;
+
   productosEnCarrito: any[] = [];
  
  // dispos: dispo[]= [] ; 
@@ -23,12 +25,18 @@ export class CardsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private carritoService: CarritoService,
+    public tokenService: TokenService,
   ) { 
     
   }
 
   ngOnInit(): void {
     this.cargarDatos();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
     
   }
 

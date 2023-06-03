@@ -13,12 +13,12 @@ import { jwtDto } from '../model/jwtdto';
   providedIn: 'root',
 })
 export class AuthService {
-  url = "";
+  url = "http://localhost:8080/";
 
   constructor(private http: HttpClient, private router: Router) {}
 
   public nuevo(nuevoUsuario: nuevousuario): Observable<any> {
-    return this.http.post<any>(this.url + 'auth/nuevo', nuevousuario);
+    return this.http.post<any>(this.url + 'auth/nuevo', nuevoUsuario);
   }
 
   public login(loginusuario: loginUsuario): Observable<jwtDto> {

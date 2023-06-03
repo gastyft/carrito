@@ -3,7 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { loginUsuario } from '../model/loginiusuario';
 import { TokenService } from '../services/token.service';
-
+import * as swal from 'sweetalert';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,17 +12,19 @@ import { TokenService } from '../services/token.service';
 export class LoginComponent implements OnInit {
 
  
-  nombreUsuario!: string;
-  password!: string;
+  nombreUsuario: any;
+  password: any;
 
   isLogged= false;
   isLoginFail = false;
   loginUsuario: loginUsuario | undefined;
   roles:string[]=[];
   errMsj:string | undefined;
+;
   
 
 constructor(private authService: AuthService,   private router:Router,
+
   private tokenService:TokenService ) { 
   }
 
@@ -37,25 +39,25 @@ constructor(private authService: AuthService,   private router:Router,
       this.roles = this.tokenService.getAuthorities();
     }
   }
-
-  onLogin():void {
-    this.loginUsuario= new loginUsuario(this.nombreUsuario, this.password);
+  onLogin(): void {
+    this.loginUsuario = new loginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUsuario).subscribe(
       data => {
-  this.isLogged= true;
-  this.isLoginFail=false;
-  this.tokenService.setToken(data.token);
-  this.tokenService.setUserName(data.nombreUsuario);
-  this.tokenService.setAuthorities(data.authorities);
-  this.roles=data.authorities;
-  this.router.navigate(['']);
- },
-   err =>{
-  this.isLogged= false;
-  this.isLoginFail= true;
-  this.errMsj = " Usuario o contraseña mal colocada. Intente de nuevo.";
-  console.log(this.errMsj);
-   }
-)}
-  
+        this.isLogged = true;
+
+        this.tokenService.setToken(data.token);
+        this.tokenService.setUserName(data.nombreUsuario);
+        this.tokenService.setAuthorities(data.authorities);
+        this.roles = data.authorities;
+     swal('Bienvenido ' + data.nombreUsuario,"","success");
+        this.router.navigate(['/principal']);
+      },
+      err => {
+        this.isLogged = false;
+        this.errMsj = err.error.message;
+        swal(""+this.errMsj,"","error");
+        // console.log(err.error.message);
+      }
+    );
+  }
 }

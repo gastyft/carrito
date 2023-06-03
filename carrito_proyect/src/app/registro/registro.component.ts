@@ -3,6 +3,7 @@ import { TokenService } from '../services/token.service';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { nuevousuario } from '../model/nuevousuario';
+import * as swal from 'sweetalert';
 
 @Component({
   selector: 'app-registro',
@@ -11,14 +12,15 @@ import { nuevousuario } from '../model/nuevousuario';
 })
 export class RegistroComponent implements OnInit {
 
-  nuevoUsuario!: nuevousuario;
-  nombre!: string;
-  nombreUsuario!: string;
-  email!: string;
+  nuevoUsuario: nuevousuario | undefined;
+  nombre:  any;
+  nombreUsuario:  any;
+  email:  any ;
 
-  errMsj!: string;
+  errMsj: any;
   isLogged = false;
-  password: any;
+  password: any ;
+data: any;
 
   constructor(
     private tokenService: TokenService,
@@ -33,26 +35,23 @@ export class RegistroComponent implements OnInit {
     }
   }
 
+ 
+  
   onRegister(): void {
-    
-    const password = this.password;
     this.nuevoUsuario = new nuevousuario(this.nombre, this.nombreUsuario, this.email, this.password);
-    this.authService.nuevo(this.nuevoUsuario).subscribe(
+    this.authService.nuevo( this.nuevoUsuario ).subscribe(
       data => {
         if(data){
-       swal("Registro exitoso","","success");
-       this.router.navigate(['/principal']);
-        }
-        else {
-          swal("Error al registrarse","Intente de nuevo","error");
-        }
-        });
-      
-
-        
-    
+        swal("", "Cuenta creada", "success");
+        this.router.navigate(['/principal']);
+      }},
+      err => {
+        this.errMsj = err.error.mensaje;
+        swal("", "Error al registrarse " + this.errMsj, "error");
       }
-    
+    );
+  }
+
         }
         
       
