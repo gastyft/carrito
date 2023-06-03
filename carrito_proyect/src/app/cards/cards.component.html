@@ -1,17 +1,22 @@
 
-
 <div class="container">
   <div class="cards">
     <table class="table">
       <tbody>
         <tr *ngFor="let datosDispo of dispos">
-          <td>
+       
+          <td> 
             <div class="card" style="width: 40rem;">
               <img [src]="datosDispo?.url" class="card-img-top" alt="image">
               <div class="card-body">
                 <div>
-                <h5 class="card-title">{{datosDispo?.nombre}}</h5> 
+                <h4 class="card-title">{{datosDispo?.nombre}}</h4> 
                 <p class="card-text">{{datosDispo?.descrip}}</p> <br>
+                <h5 class="card-text">$ {{datosDispo?.precio}}</h5>
+             
+                <button class="btn btn-secondary" type="button" (click)="agregarAlCarrito(datosDispo)">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
               </div>
               <div>
                 <button class="btn btn-secondary" type="button" routerLink="/editar/{{datosDispo.id}}">
@@ -24,14 +29,9 @@
               </div>
             </div>
           </td>
+          
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-
-
-
-
- 

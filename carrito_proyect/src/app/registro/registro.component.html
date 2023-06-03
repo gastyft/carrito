@@ -1,0 +1,38 @@
+
+  
+<div class="container"  >
+    
+    <div class="register" >
+      <h2>Crear usuario</h2>
+    
+      <form #f="ngForm"  (ngSubmit)="onRegister()" novalidate class="was-validated" >
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre de Usuario:</label>
+          <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingrese nombre de usuario"  name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
+          <div class="invalid-feedback">Complete con alias o nombre de usuario.</div>
+          <div class="valid-feedback">Valido.</div>
+        </div>
+        <div class="form-group">
+          <label for="nombreUsuario"> Ingrese mail</label>
+          <input type="email" class="form-control" id="nombreUsuario" placeholder="Ingrese nombre de usuario"  name="email" [(ngModel)]="email" required>
+          <div class="invalid-feedback">Complete con email valido.</div>
+          <div class="valid-feedback">Valido.</div>
+        </div>
+    
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña"  name="password" [(ngModel)]="password"  required minlength="4">
+          <div class="valid-feedback">Valido.</div>
+        </div>
+        
+    <div>
+          <input class="btn btn-danger" type="button" value="Volver" routerLink="/principal" >
+    
+        <button type="submit" [disabled]="!f.valid" class="btn btn-primary"  >Submit</button>
+      </div> 
+      </form>
+      <div *ngIf="f.submitted " class="alert alert-danger mt-3">Fail en Registrarse.{{errMsj}}</div>
+      
+    </div>
+    
+    </div>

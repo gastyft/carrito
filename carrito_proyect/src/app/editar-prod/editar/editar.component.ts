@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { dispo } from 'src/app/model/dispo';
 import { DispoServiceService } from 'src/app/services/dispo.service.service';
-
+import * as swal from 'sweetalert';
 
 
 @Component({

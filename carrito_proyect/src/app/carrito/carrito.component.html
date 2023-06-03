@@ -1,0 +1,22 @@
+<div class="container">
+    
+            <h2>Productos Seleccionados a comprar</h2>
+            <table *ngFor="let producto of productosEnCarrito">
+                <tbody>
+                    <tr>
+           <td>
+              <p>{{ producto.nombre }}</p>
+            </td>
+            <td> 
+                <p>{{producto.precio}}</p>
+            </td>
+               <td><button type="button" class="btn btn-danger" (click)=" eliminarProductoDelCarrito(producto)">
+                <i class="fa-solid fa-square-minus"></i>
+               </button>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <h3>Total: $ {{total}}</h3>
+          </div>

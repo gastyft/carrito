@@ -9,6 +9,8 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { FooterComponent } from './footer/footer.component';
 import { AgregarComponent } from './agregar-prod/agregar/agregar.component';
 import { EditarComponent } from './editar-prod/editar/editar.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
 
@@ -16,6 +18,8 @@ const routes: Routes = [
   redirectTo: 'principal', pathMatch:'full'},
   {path: 'principal', 
   component:PrincipalComponent }, 
+  {path:'registro',
+component: RegistroComponent},
   {path: 'login',
   component: LoginComponent},
   {path:'cards',
@@ -28,6 +32,9 @@ component: ContactoComponent},
 component: AgregarComponent},
 {path:'editar/:id',
 component: EditarComponent},
+{path:'carrito',
+component: CarritoComponent},
+
 {path: 'footer',
 component: FooterComponent},
 

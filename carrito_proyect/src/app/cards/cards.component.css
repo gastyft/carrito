@@ -8,6 +8,8 @@
     grid-auto-flow: row;
     grid-template-areas:
       "cards cards";
+
+      
       
   }
   
