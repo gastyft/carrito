@@ -19,11 +19,11 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               
-              <li><a class="dropdown-item" routerLink="/cards">Ver Productos</a></li>
+              <li><a class="dropdown-item" routerLink="/cards" *ngIf="isLogged && esAdmin">Mis Productos</a></li>
             <!--  <li><a class="dropdown-item"routerLink="/notebookcard">notebooks</a></li>  -->
-              <li><a class="dropdown-item"routerLink="/agregar" *ngIf="isLogged" >Agregar Producto</a></li>
+              <li><a class="dropdown-item"routerLink="/agregar" *ngIf="isLogged && esAdmin" >Agregar Producto</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" routerLink="/principal">ver todo</a></li>
+              <li><a class="dropdown-item" routerLink="/principal"  (click)="scrollToTop()">Ver Productos</a></li>
             </ul>
           </li>
          
