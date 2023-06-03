@@ -1,1 +1,24 @@
 <p>agregar works!</p>
+<div class="container-fluid">
+    <div class="all">
+    
+      <form (ngSubmit)="AgregarDispo()" novalidate #f="ngForm">
+    <div class="form-group" >
+        <label for="comment"><h2> Agregar Hard Skills</h2> </label> <br>
+        <label>Nombre de Hard Skill</label>
+        <input  type="text"   class="form-control"  id="nombre" name="nombre" [(ngModel)]="nombre"  required>  
+        <input type="text" class="form-control" id="descrip" name="descrip"  [(ngModel)]="descrip" required>
+        <input type="number" class="form-control" id="descrip" name="precio"  [(ngModel)]="precio" required>
+        <input type="text" class="form-control" id="url" name="url"  [(ngModel)]="url" required>
+      </div>
+     
+      <a routerLink="/principal" > 
+        <input class="btn btn-danger" type="button" value="Volver">
+        </a>
+     
+        <input class="btn btn-primary" type="submit" value="Guardar Cambios"  >
+    
+      </form>
+      </div>
+    
+    </div>
