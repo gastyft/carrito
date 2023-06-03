@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { dispo } from 'src/app/model/dispo'; 
+import { DispoServiceService } from 'src/app/services/dispo.service.service';
+
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-agregar',
@@ -7,9 +12,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  nombre:  String = '' ;
+  descrip: String ='';
+  precio!: number;
+  url: string= '';
+  disp: dispo | undefined;
+   data: any;
+ 
+  
+  constructor(
+    private roouter : Router,
+    private datosHard : DispoServiceService) { }
 
   ngOnInit(): void {
+    
   }
 
+
+  AgregarDispo ():void{
+    const disp = new dispo(this.nombre,this.descrip,this.precio,this.url);
+    this.datosHard.save(disp).subscribe( (data: any)=> {
+     console.log(data);
+    }
+    )
+    if( this.nombre !=null && this.descrip !=null && this.precio !=null && this.url!=null){
+
+      swal("Producto agregado"); 
+          
+      this.roouter.navigate(['principal']);
+    }
+    else{
+      swal("fallo al guardar producto");
+      this.roouter.navigate(['principal'])
+    }
+   
+   }
+  
 }
