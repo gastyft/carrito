@@ -1,8 +1,12 @@
+
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { dispo } from 'src/app/model/dispo';
 import { DispoServiceService } from 'src/app/services/dispo.service.service';
+
 import * as swal from 'sweetalert';
+
+import { ActivatedRoute,Router } from '@angular/router';
+
 
 
 @Component({
@@ -21,9 +25,9 @@ url: dispo | undefined;
   data: any;
   
     constructor( 
+      private router: Router,
      private datosDispo: DispoServiceService,
-     private activatedRoute: ActivatedRoute,
-      private router: Router
+     private acivatedroute: ActivatedRoute,
     ) { 
       
   
@@ -32,9 +36,9 @@ url: dispo | undefined;
     ngOnInit() {
   
       {
-        const id = this.activatedRoute.snapshot.params['id'];
+        const id = this.acivatedroute.snapshot.params['id'];
         this.datosDispo.getDispoId(id).subscribe(
-          data => { 
+          (          data: any) => { 
             console.log(data);
             this.dispositivos=data;
             
@@ -51,9 +55,9 @@ url: dispo | undefined;
   
   
      onUpdate():void{
-      const id = this.activatedRoute.snapshot.params['id'];
+      const id = this.acivatedroute.snapshot.params['id'];
       this.datosDispo.update(id, this.dispositivos).subscribe(
-        data =>{
+        (        data: any) =>{
          console.log(data);
        
           
