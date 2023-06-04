@@ -19,6 +19,7 @@ export class CardsComponent implements OnInit {
   roles:string[]=[];
   productosEnCarrito: any[] = [];
   esAdmin: boolean=true;
+  mostrarBoton: boolean =true;
  
  // dispos: dispo[]= [] ; 
   constructor(
@@ -38,8 +39,15 @@ export class CardsComponent implements OnInit {
       this.isLogged = true;
       this.esAdmin = this.roles.includes('ROLE_ADMIN');
     } else {
-      
+
       this.isLogged = false;
+    }
+    const currentRoute = this.router.url;
+
+    if (currentRoute === '/principal') {
+      this.mostrarBoton = false;
+    } else {
+      this.mostrarBoton = true;
     }
   }
 

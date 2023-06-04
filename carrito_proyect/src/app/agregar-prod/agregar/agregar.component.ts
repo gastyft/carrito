@@ -44,7 +44,10 @@ export class AgregarComponent implements OnInit {
 
       swal("Producto agregado"); 
           
-      this.roouter.navigate(['principal']);
+    
+setTimeout(() => {
+  this.roouter.navigate(['principal']);
+}, 2000); // 2000 milisegundos = 2 segundos de retraso
     }
   }
     else{
