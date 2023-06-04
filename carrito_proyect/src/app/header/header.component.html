@@ -31,7 +31,7 @@
         <ol class="d-flex">
           <a class="nav-item" routerLink="/registro" *ngIf="!isLogged" >SignUp</a>
         <a class="nav-item"  *ngIf="!isLogged"   routerLink="/login">Login</a>
-        <a class="nav-item"  *ngIf="isLogged"  (click)="onLogOut()">Logout</a>
+        <a class="nav-item"  *ngIf="isLogged"  (click)="onLogOut()" style="cursor: pointer;">Logout</a>
         
             <a class="nav-item" routerLink="/carrito">
               <i class="fa-solid fa-cart-shopping">{{cantidad}}</i>
