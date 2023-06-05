@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../services/carrito.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -13,7 +14,9 @@ export class CarritoComponent implements OnInit {
   producto: any
   datosDispo: any;
   total: number = 0;
-  constructor(private carritoService: CarritoService) {  this.productosEnCarrito = carritoService.productosSeleccionados; 
+  constructor(private carritoService: CarritoService,
+    private router: Router,
+    ) {  this.productosEnCarrito = carritoService.productosSeleccionados; 
   
     this.calcularTotal();}
 
@@ -34,6 +37,18 @@ export class CarritoComponent implements OnInit {
       this.carritoService.productosSeleccionados1--;
       console.log('Producto eliminado del carrito:', producto);
     }
+  }
+  formatNumber(value: number): string {
+    return value.toLocaleString('es', { minimumFractionDigits: 2 });
+  }
+
+  comprar(){
+swal("Compra exitosa"," Adquirio estos productos por $"+ this.formatNumber(this.total),"success");
+while (this.productosEnCarrito.length > 0) {
+  const producto = this.productosEnCarrito[0];
+  this.eliminarProductoDelCarrito(producto);
+}
+this.router.navigate(['principal']);
   }
 }
 
