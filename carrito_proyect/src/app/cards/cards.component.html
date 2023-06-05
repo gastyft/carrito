@@ -12,7 +12,8 @@
                 <div>
                 <h4 class="card-title">{{datosDispo?.nombre}}</h4> 
                 <p class="card-text" >{{datosDispo?.descrip}}</p>
-                <h5 class="card-text">$ {{datosDispo?.precio}}</h5>
+                <h5 class="card-text">$ {{ formatNumber(datosDispo?.precio) }}</h5>
+
              
                 <button class="btn btn-secondary" type="button" *ngIf="isLogged && !esAdmin"  (click)="agregarAlCarrito(datosDispo)">
                   <i class="fa-solid fa-cart-plus"></i>

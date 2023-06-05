@@ -4,29 +4,45 @@
       <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
     <div class="form-group" >
         <label for="comment"><h2> Editar DISPO:</h2> </label>
-        <input  type="text"    class="form-control" id="experiencia_laboral" name="nombre" [(ngModel)]="dispositivos.nombre" required >  
+        <input  type="text"    class="form-control" id="nombre" name="nombre" [(ngModel)]="dispositivos.nombre" required >  
     
       </div>
       <div class="form-group" >
         <label for="comment"><h2> Editar Descripcion:</h2> </label>
-        <input  type="text"  class="form-control" id="experiencia_laboral" name="descrip" [(ngModel)]="dispositivos.descrip" required >  
+        <input  type="text"  class="form-control" id="descrip" name="descrip" [(ngModel)]="dispositivos.descrip" required >  
     
       </div>
       <div class="form-group" >
         <label for="comment"><h2> Editar Precio:</h2> </label>
-        <input  type="text"    class="form-control" id="experiencia_laboral" name="precio" [(ngModel)]="dispositivos.precio" required >  
+        <input  type="number"    class="form-control" id="precio" name="precio" [(ngModel)]="dispositivos.precio" required    >  
     
       </div>
       <div class="form-group" >
-        <label for="comment"><h2> Editar url:</h2> </label>
-        <input  type="text" class="form-control" id="experiencia_laboral" name="url" [(ngModel)]="dispositivos.url" required >  
-    
+        <label>SUBIR IMAGEN</label>
       </div>
+     
+      <div class="custom-file">
+        <label class="custom-file-label" for="imagen">Elige una imagen</label>
+        <input type="file" class="custom-file-input" id="imagen" #imagenInputFile
+        (change)="onFileChange($event)" accept="image/png, image/jpeg, image/gif">
+    </div>
+    
+    <div *ngIf="imagenMin" class="mt-5">
+      <h5>Vista Previa:</h5>
+      <div>
+        <img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin">
+      </div>
+    </div>
+    <div class="form-group d-flex justify-content-between my-3">
+    <!--    <button type="submit" class="btn btn-outline-success" [disabled]="!imagen"><i class="fas fa-upload"></i> Subir</button> -->
+        <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reset</button>
+    </div>
+
       <a routerLink="/principal" > 
         <input class="btn btn-danger" type="button" value="Volver">
         </a>
      
-        <input class="btn btn-primary" type="submit" value="Guardar Cambios" [disabled]="!dispositivos.nombre && !dispositivos.descrip && !dispositivos.precio && !dispositivos.url">
+        <input class="btn btn-primary" type="submit" value="Guardar Cambios" [disabled]="!dispositivos.nombre && !dispositivos.descrip && !dispositivos.precio && !imagenActual">
     
       </form>
       </div>

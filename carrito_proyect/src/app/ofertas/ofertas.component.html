@@ -5,13 +5,13 @@
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
       
       <div class="carousel-inner">
-        <div class="carousel-item" [class.active]="i === 0" [attr.data-bs-interval]="datos.interval" *ngFor="let datos of dispos; let i = index">
+        <div class="carousel-item" [class.active]="i === 0" [attr.data-bs-interval]="datos.interval" *ngFor="let datos of obtenerOrdenAleatorio() let i = index">
           <img [src]="datos.url" class="d-block w-100" alt="...">
           <div>
           <div class="carousel-caption d-inline">
             
-            <h5 style="color: white;">{{ datos?.nombre }}</h5>
-            <p style="color: white;">{{ datos?.precio }}</p></div>
+            <h5 style="color: red;">{{ datos?.nombre }}</h5>
+            <p style="color: red;">$ {{formatNumber(datos?.precio)}}</p></div>
           </div>
         </div>
       </div>

@@ -34,4 +34,11 @@ export class OfertasComponent implements OnInit {
       console.log(data)
       this.dispos = data;
       
-    }) } }
+    }) } 
+    obtenerOrdenAleatorio(): any[] {
+      return this.dispos.slice().sort(() => Math.random() - 0.5);
+    }
+    formatNumber(value: number): string {
+      return value.toLocaleString('es', { minimumFractionDigits: 2 });
+    }
+  }

@@ -5,7 +5,7 @@ import { CarritoService } from '../services/carrito.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as swal from 'sweetalert';
 import { TokenService } from '../services/token.service'; 
-
+import { ImagenService } from '../services/imagen.service';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -20,6 +20,7 @@ export class CardsComponent implements OnInit {
   productosEnCarrito: any[] = [];
   esAdmin: boolean=true;
   mostrarBoton: boolean =true;
+  imagenc:any;
  
  // dispos: dispo[]= [] ; 
   constructor(
@@ -28,6 +29,7 @@ export class CardsComponent implements OnInit {
     private router: Router,
     private carritoService: CarritoService,
     public tokenService: TokenService,
+    private imagenService: ImagenService,
   ) { 
     
   }
@@ -67,10 +69,11 @@ deleteDispo(id?: number){
     
         
       })
-      swal("Se ha eliminado producto","","error");
+      location.reload();
+      setTimeout(() => {
+        swal("Se ha eliminado producto","","error");
+      }, 2000); // 2000 milisegundos = 2 segundos de retraso
 
-  
-    location.reload();
 
 }
 
@@ -85,4 +88,20 @@ agregarAlCarrito(disp:dispo) {
   swal("","Producto agregado al carrito","");
 
 }
+cargarImagen(){
+   
+
+  this.imagenService.list().subscribe(
+    data4=>{
+     
+ 
+      this.imagenc = data4; 
+      
+    
+})
 }
+formatNumber(value: number): string {
+  return value.toLocaleString('es', { minimumFractionDigits: 2 });
+}
+}
+
