@@ -26,10 +26,18 @@ width: 30%;
 }
 .oferta2 {
   width: 100%; /* Ajustar el ancho al 100% del contenedor */
-  max-width: 30rem; /* Establecer un ancho máximo */
+  max-width: 20rem; /* Establecer un ancho máximo */
   margin: 0 auto; /* Centrar horizontalmente */
 padding-top: 20px;  
+
 }
 
+@media (max-width: 412px) {
+  .oferta2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 
