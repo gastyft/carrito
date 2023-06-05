@@ -14,8 +14,8 @@ padding: 0.5em;
 
 .navbar.navbar-expand-lg.navbar-light.bg-light{
     position: fixed;
-    margin-top: 0;
     width: 100%;
     z-index: 3;
+    padding-top: 0;
 
 }
