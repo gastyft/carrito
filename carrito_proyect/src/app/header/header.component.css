@@ -14,11 +14,8 @@ padding: 0.5em;
 
 .navbar.navbar-expand-lg.navbar-light.bg-light{
     position: fixed;
-    
+    margin-top: 0px;
     width: 100%;
     z-index: 3;
 
 }
-.container-fluid {
-    margin-top: 0px; /* Para dejar espacio para el navbar fijo */
-  }
