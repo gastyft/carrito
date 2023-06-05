@@ -1,5 +1,5 @@
 
-.container {  display: grid;
+.container-fluid {  display: grid;
     background-color: transparent;
     grid-template-columns: 1.5fr 1.5fr;
     grid-template-rows: 0.8fr;
