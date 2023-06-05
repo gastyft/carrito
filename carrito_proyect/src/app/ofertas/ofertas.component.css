@@ -16,7 +16,9 @@ width: 30%;
 
 */
 
-
+.container {
+  margin-top: 60px; /* Para dejar espacio para el navbar fijo */
+}
   
   .oferta1 { grid-area: oferta1;
     display: block;
