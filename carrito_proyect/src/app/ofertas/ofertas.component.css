@@ -16,17 +16,7 @@ width: 30%;
 
 */
 
-.container-fluid {
-  display: grid;
-  background-color: transparent;
-  grid-template-columns: 1.5fr 1.5fr;
-  grid-template-rows: 0.8fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". oferta2";
-}
+
   
   .oferta1 { grid-area: oferta1;
     display: block;
@@ -34,19 +24,11 @@ width: 30%;
    
     margin-top: 100px;
 }
- 
-  .oferta2 { grid-area: oferta2; 
-    display: flex;
-   
-    
-    margin-top: 100px;
+.oferta2 {
+  width: 100%; /* Ajustar el ancho al 100% del contenedor */
+  max-width: 40rem; /* Establecer un ancho máximo */
+  margin: 0 auto; /* Centrar horizontalmente */
 }
 
 
 
-@media (max-width: 412px) {
-  .oferta2 {
-    width:12px;
-  }
-}
- 
