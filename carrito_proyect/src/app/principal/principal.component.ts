@@ -14,7 +14,7 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
     const isWelcomeShown = localStorage.getItem('isWelcomeShown');
     
-    if (isWelcomeShown) {
+    if (!isWelcomeShown) {
       swal("Bienvenido a mi E-commerce", "Soy Desarrollador Full-Stack Jr y Tester Manual Trainee en busca de mi primer trabajo IT con ganas de trabajar y seguir aprendiendo en el mundo de la programación", "")
       .then(() => {
         swal("Bienvenido a mi E-commerce", "Falta implementacion de metodos de pago en seccion carrito", "success");
