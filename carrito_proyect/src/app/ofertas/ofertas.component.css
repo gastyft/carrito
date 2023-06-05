@@ -16,20 +16,19 @@ width: 30%;
 
 */
 
-.container {
-  margin-top: 60px; /* Para dejar espacio para el navbar fijo */
-}
+
   
   .oferta1 { grid-area: oferta1;
     display: block;
     width:max-content;
    
-    margin-top: 100px;
+    
 }
 .oferta2 {
   width: 100%; /* Ajustar el ancho al 100% del contenedor */
   max-width: 40rem; /* Establecer un ancho máximo */
   margin: 0 auto; /* Centrar horizontalmente */
+  margin-top: 100px;
 }
 
 
