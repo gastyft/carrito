@@ -28,7 +28,7 @@ width: 30%;
   width: 100%; /* Ajustar el ancho al 100% del contenedor */
   max-width: 20rem; /* Establecer un ancho máximo */
   margin: 0 auto; /* Centrar horizontalmente */
-  margin-top: 10px;
+padding-top: 30px;  
 
 }
 
