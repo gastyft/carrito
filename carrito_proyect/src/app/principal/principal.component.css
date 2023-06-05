@@ -5,7 +5,9 @@
     background: -webkit-linear-gradient(0deg, rgba(59, 59, 59, 1) 10%, rgba(219, 115, 224, 1) 42%, rgba(99, 213, 215, 1) 81%);
     background: linear-gradient(0deg, rgba(59, 59, 59, 1) 10%, rgba(219, 115, 224, 1) 42%, rgba(99, 213, 215, 1) 81%);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#3b3b3b", endColorstr="#63d5d7", GradientType=1);
-    padding-bottom: 30px;
+ 
+        margin-top: 0;
+      
   }
   
   
