@@ -41,7 +41,5 @@ export class OfertasComponent implements OnInit {
     formatNumber(value: number): string {
       return value.toLocaleString('es', { minimumFractionDigits: 2 });
     }
-    redirigirProducto(datos: any) {
-      this.router.navigate(['/cards', datos.id]); // Reemplaza 'datos.id' con el identificador del producto adecuado
-    }
+
   }

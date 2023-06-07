@@ -6,9 +6,9 @@
       
       <div class="carousel-inner">
        <div class="carousel-item"  [class.active]="i === 0" [attr.data-bs-interval]="datos.interval" *ngFor="let datos of obtenerOrdenAleatorio() let i = index">
-        <a (click)="redirigirProducto(datos)">
+     
           <img [src]="datos.url" class="d-block w-100" alt="...">
-        </a>
+       
           <div>
           <div class="carousel-caption d-inline">
             <h5  style="color:rgb(10, 225, 64);">{{ datos?.nombre }}</h5>
