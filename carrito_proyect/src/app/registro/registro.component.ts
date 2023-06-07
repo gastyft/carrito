@@ -43,7 +43,7 @@ export class RegistroComponent implements OnInit {
       () => {
         
         swal("", "Cuenta creada", "success");
-        this.router.navigate(['/principal']);
+        this.router.navigate(['/login']);
       },
       err => {
         this.errMsj = err.error.mensaje;
