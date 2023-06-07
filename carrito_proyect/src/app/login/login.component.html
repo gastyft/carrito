@@ -42,7 +42,7 @@
   <form #f="ngForm" (ngSubmit)="onLogin()" novalidate  class="was-validated">
     <div class="form-group">
       <label for="nombreUsuario">Nombre de Usuario:</label>
-      <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingrese nombre de usuario"  name="nombreUsuario" [(ngModel)]="nombreUsuario" required>
+      <input type="text" class="form-control" id="nombreUsuario" placeholder="Ingrese nombre de usuario"  name="nombreUsuario" [(ngModel)]="nombreUsuario" required  autocomplete="on">
       <div class="invalid-feedback">Complete con alias o nombre de usuario.</div>
       <div class="valid-feedback">Valido.</div>
     </div>
@@ -50,7 +50,7 @@
 
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña"  name="password" [(ngModel)]="password"  required minlength="4">
+      <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña"  name="password" [(ngModel)]="password"  required minlength="4"  autocomplete="on">
       <div class="valid-feedback">Valido.</div>
     </div>
     
