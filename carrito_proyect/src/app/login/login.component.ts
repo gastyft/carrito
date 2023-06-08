@@ -55,7 +55,13 @@ constructor(private authService: AuthService,   private router:Router,
       err => {
         this.isLogged = false;
         this.errMsj = err.error.message;
+        if(this.errMsj == "undefined"){
+          this.errMsj= "Usuario no existe"
         swal(""+this.errMsj,"","error");
+        }
+        else{
+          swal(""+this.errMsj,"","error");
+        }
         // console.log(err.error.message);
       }
     );
