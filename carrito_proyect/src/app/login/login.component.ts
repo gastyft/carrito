@@ -52,15 +52,15 @@ constructor(private authService: AuthService,   private router:Router,
      swal('Bienvenido ' + data.nombreUsuario,"","success");
         this.router.navigate(['/principal']);
       },
-      err => {
-        this.isLogged = false;
-       // this.errMsj = err.error.message;  mensaje desde el BACK
-       
-          this.errMsj= "Usuario o contraseña mal colocada"
-        swal(""+this.errMsj,"","error");
-       
-        // console.log(err.error.message);
-      }
+    err => {
+  this.isLogged = false;
+  if (err.status === 404) {
+    this.errMsj = "El usuario no existe";
+  } else {
+    this.errMsj = "Usuario o contraseña mal colocada";
+  }
+  swal("" + this.errMsj, "", "error");
+}
     );
   }
 }
