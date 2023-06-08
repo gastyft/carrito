@@ -54,14 +54,11 @@ constructor(private authService: AuthService,   private router:Router,
       },
       err => {
         this.isLogged = false;
-        this.errMsj = err.error.message;
-        if(this.errMsj == "undefined"){
-          this.errMsj= "Usuario no existe"
+       // this.errMsj = err.error.message;  mensaje desde el BACK
+       
+          this.errMsj= "Usuario o contraseña mal colocada"
         swal(""+this.errMsj,"","error");
-        }
-        else{
-          swal(""+this.errMsj,"","error");
-        }
+       
         // console.log(err.error.message);
       }
     );

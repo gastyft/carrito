@@ -58,8 +58,9 @@
     <button type="submit" [disabled]="!f.valid" class="btn btn-primary"  >Submit</button>
   </div> 
   </form>
+
   <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">Fail en el login.{{errMsj}}</div>
-  
+  <a routerLink="/registro">Crear una Cuenta</a>
 </div>
 
 </div>
