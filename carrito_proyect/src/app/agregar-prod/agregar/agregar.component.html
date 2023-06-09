@@ -7,7 +7,7 @@
         <label>Nombre DISPO</label>
         <input  type="text"   class="form-control"  id="nombre" name="nombre" [(ngModel)]="nombre"  required>  
         <label>DESCRIPCION</label>
-        <input type="text" class="form-control" id="descrip" name="descrip"  [(ngModel)]="descrip" required>
+        <textarea type="text" class="form-control" id="descrip" name="descrip"  [(ngModel)]="descrip" required style="height: 200px;" maxlength="255"></textarea>
         <label>PRECIO</label>
         <input type="number" class="form-control" id="precio" name="precio"  [(ngModel)]="precio" required>
         <label>SUBIR IMAGEN</label>
