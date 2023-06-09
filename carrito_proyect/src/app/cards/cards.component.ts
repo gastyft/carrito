@@ -69,11 +69,11 @@ deleteDispo(id?: number){
     
         
       })
-      location.reload();
       setTimeout(() => {
         swal("Se ha eliminado producto","","error");
       }, 2000); // 2000 milisegundos = 2 segundos de retraso
-
+      
+      location.reload();
 
 }
 
