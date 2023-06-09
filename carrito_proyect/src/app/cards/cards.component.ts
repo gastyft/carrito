@@ -66,10 +66,9 @@ deleteDispo(id?: number){
     this.datosDispo.deleteDispo(id).subscribe(
               data => {
    
-        
+                swal("Se ha eliminado producto","","error");
       })
       setTimeout(() => {
-        swal("Se ha eliminado producto","","error");
           
       location.reload();
       }, 2000); // 2000 milisegundos = 2 segundos de retraso
