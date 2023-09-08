@@ -13,7 +13,7 @@ import { jwtDto } from '../model/jwtdto';
   providedIn: 'root',
 })
 export class AuthService {
-  url = "https://carrito-gastyft.koyeb.app/";
+  url = "https://carrito-back.onrender.com/";
 
   constructor(private http: HttpClient, private router: Router) {}
 

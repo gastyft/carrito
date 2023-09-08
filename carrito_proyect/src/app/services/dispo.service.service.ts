@@ -8,7 +8,7 @@ import { dispo } from '../model/dispo';
 export class DispoServiceService {
 
 
-  url = "https://carrito-gastyft.koyeb.app/dispo/";
+  url = "https://carrito-back.onrender.com/";
   constructor( private http: HttpClient) { }
 
   public getDispoList():Observable<dispo>{
