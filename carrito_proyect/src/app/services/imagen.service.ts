@@ -8,7 +8,7 @@ import { Imagen } from '../model/imagen';
 })
 export class ImagenService {
 
-  imagenURL = 'https://carrito-back.onrender.com/';
+  imagenURL = "https://carrito-back.onrender.com/cloudinary/";
 
   constructor(private httpClient: HttpClient) { }
 
