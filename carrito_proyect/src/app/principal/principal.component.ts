@@ -17,10 +17,10 @@ export class PrincipalComponent implements OnInit {
  
       swal("Bienvenido a mi E-commerce", "Soy Desarrollador Full-Stack Jr y Tester Manual Trainee en busca de mi primer trabajo IT con ganas de trabajar y seguir aprendiendo en el mundo de la programación", "")
       .then(() => {
-        swal("Bienvenido a mi E-commerce", "Página en Mantenimiento", "warning");
+    //    swal("Bienvenido a mi E-commerce", "Página en Mantenimiento", "warning");
       });
   
-     // localStorage.setItem('isWelcomeShown', 'true');
+     localStorage.setItem('isWelcomeShown', 'true');
     
     
   }
