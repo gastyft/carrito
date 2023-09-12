@@ -12,20 +12,25 @@ export class PrincipalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // const isWelcomeShown = localStorage.getItem('isWelcomeShown');
+     const isWelcomeShown = localStorage.getItem('isWelcomeShown');
     
-     if (!localStorage.getItem('isWelcomeShown')) {
-      // Mostrar el mensaje de bienvenida
+     if (!isWelcomeShown) {
       swal("Bienvenido a mi E-commerce", "Soy Desarrollador Full-Stack Jr y Tester Manual Trainee en busca de mi primer trabajo IT con ganas de trabajar y seguir aprendiendo en el mundo de la programación", "")
       .then(() => {
     //    swal("Bienvenido a mi E-commerce", "Página en Mantenimiento", "warning");
       });
-      // Guardar la clave 'isWelcomeShown' en localStorage
-      localStorage.setItem('isWelcomeShown', 'true');
-    }
-    
-  }
   
+     localStorage.setItem('isWelcomeShown', 'true');
+    
+     
+    }
+
+  
+  // Agregar un evento para limpiar 'isWelcomeShown' cuando el navegador se cierra
+  window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('isWelcomeShown');
+  });
+}
 
   }
 
