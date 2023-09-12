@@ -20,7 +20,7 @@ export class PrincipalComponent implements OnInit {
     //    swal("Bienvenido a mi E-commerce", "Página en Mantenimiento", "warning");
       });
   
-     localStorage.setItem('isWelcomeShown', 'true');
+  //   localStorage.setItem('isWelcomeShown', 'true');
     
     
   }
