@@ -12,7 +12,7 @@ export class PrincipalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //const isWelcomeShown = localStorage.getItem('isWelcomeShown');
+     const isWelcomeShown = localStorage.getItem('isWelcomeShown');
     
  
       swal("Bienvenido a mi E-commerce", "Soy Desarrollador Full-Stack Jr y Tester Manual Trainee en busca de mi primer trabajo IT con ganas de trabajar y seguir aprendiendo en el mundo de la programación", "")
