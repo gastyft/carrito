@@ -12,7 +12,7 @@ export class PrincipalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-     const isWelcomeShown = localStorage.getItem('isWelcomeShown');
+    // const isWelcomeShown = localStorage.getItem('isWelcomeShown');
     
      if (!localStorage.getItem('isWelcomeShown')) {
       // Mostrar el mensaje de bienvenida
