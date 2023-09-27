@@ -1,43 +1,33 @@
-
 <div class="container">
-  <div class="cards">
-    <table class="table">
-      <tbody>
-        <tr *ngFor="let datosDispo of dispos">
-       
-          <td> 
-            <div class="card" style="width: 25rem;">
-              <img [src]="datosDispo?.url" class="card-img-top" alt="image">
-              <div class="card-body">
-                <div>
-                <h4 class="card-title">{{datosDispo?.nombre}}</h4> 
-                <p class="card-text" >{{datosDispo?.descrip}}</p>
-                <h5 class="card-text">$ {{ formatNumber(datosDispo?.precio) }}</h5>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let datosDispo of dispos">
+      <div class="card">
+        <img [src]="datosDispo?.url" class="card-img-top" alt="image">
+        <div class="card-body">
+          <h5 class="card-title">{{ datosDispo?.nombre }}</h5>
+          <p class="card-text">{{ datosDispo?.descrip }}</p>
+          <h5 class="card-text">$ {{ formatNumber(datosDispo?.precio) }}</h5>
 
-             
-                <button class="btn btn-secondary" type="button" *ngIf="isLogged && !esAdmin"  (click)="agregarAlCarrito(datosDispo)">
-                  <i class="fa-solid fa-cart-plus"></i>
-                </button>
-              </div>
-              <div>
-                <button class="btn btn-secondary" type="button" *ngIf="isLogged  && esAdmin "  routerLink="/editar/{{datosDispo.id}}">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button type="button" class="btn btn-danger" *ngIf="isLogged && esAdmin" (click)="deleteDispo(datosDispo.id)">
-                  <i class="fa-solid fa-square-minus"></i>
-                </button>
-              </div>
-              </div>
-           
-            </div>
-          </td>
-   
-        </tr> 
-        <button class="btn btn-secondary" type="button"  *ngIf="mostrarBoton" routerLink="/principal"> 
-          Volver al inicio
-          </button> 
-      </tbody>
-    </table>
-   
+          <div *ngIf="isLogged && !esAdmin">
+            <button class="btn btn-secondary" type="button" (click)="agregarAlCarrito(datosDispo)">
+              <i class="fa-solid fa-cart-plus"></i>
+            </button>
+          </div>
+
+          <div *ngIf="isLogged && esAdmin">
+            <button class="btn btn-secondary" type="button" routerLink="/editar/{{ datosDispo.id }}">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button type="button" class="btn btn-danger" (click)="deleteDispo(datosDispo.id)">
+              <i class="fa-solid fa-square-minus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <button class="btn btn-secondary" type="button" *ngIf="mostrarBoton" routerLink="/principal"> 
+    Volver al inicio
+  </button> 
 </div>
